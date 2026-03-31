@@ -16,7 +16,7 @@ Interactive Threat Analyzer: A mock inbox where users can "scan" emails to revea
 
 Real-World Scenarios: Examples of Business Email Compromise (BEC), Phishing, and QR code attacks.
 
-The "Rick Roll" Test: A functional QR code demonstration showing how attackers use URL shorteners to mask malicious destinations.
+The QR-Code Test: A functional QR code demonstration showing how attackers use URL shorteners to mask malicious destinations.
 
 Actionable Defenses: Clear, non-technical advice on using MFA, verifying senders, and identifying "False Urgency."
 

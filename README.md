@@ -1,65 +1,54 @@
-# 🛡️ Email Security Interactive Guide
+# 🛡️ Email Attack Simulator (Educational)
 
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-An interactive platform designed to dismantle the mechanics of modern email attacks. Learn to spot deception before clicking.
+A simple, interactive web app built to demonstrate how common email scams work. This is a **learning project** designed to help "normal people" recognize red flags and avoid getting scammed.
 
-🔗 **[View Live Demo](https://email-security-guide.vercel.app/)**
-
----
-
-## 🚀 The Mission
-Over **90% of cyber breaches** begin with a simple email. As attackers shift toward "Quishing" (QR Phishing) and social engineering, technical filters aren't enough. This project bridges the gap between complex security concepts and everyday digital habits through hands-on simulation.
+🔗 **[View the Project](https://email-security-guide.vercel.app/)**
 
 ---
 
-## ✨ Key Features
+## 📖 What is this?
+This isn't a professional security tool. It’s a **demonstration sandbox** created to show the "tricks" attackers use in your inbox. Since 90% of hacks start with an email, the goal here is to bridge the gap between technical jargon and real-life habits.
 
-| Feature | Description |
-| :--- | :--- |
-| **🔍 Threat Analyzer** | A mock inbox where you can "scan" emails to reveal hidden red flags. |
-| **🎭 Real-World Scenarios** | Simulate BEC (Business Email Compromise) and sophisticated phishing. |
-| **📱 QR-Code Test** | A functional test demonstrating how link shorteners mask dangerous destinations. |
-| **🛡️ Proactive Defenses** | Actionable advice on MFA, sender verification, and identifying psychological triggers. |
-
----
-
-## 🛠️ Tech Stack
-* **Frontend:** React 18
-* **Build Tool:** Vite
-* **Styling:** Tailwind CSS
-* **Icons:** Lucide React
+### What you can do here:
+* **🔍 Analyze Scams:** Use the "Analyze" button in the mock inbox to see exactly where a scammer is trying to trick you.
+* **🎭 Spot the Fakes:** Look at examples of fake CEO emails, "urgent" IT alerts, and HR updates.
+* **📱 The QR Test:** Scan a functional QR code to see how attackers hide where a link is actually taking you (it's a safe surprise!).
+* **✅ Learn Defenses:** Simple, non-technical steps anyone can take to keep their accounts safe.
 
 ---
 
-## 📸 How It Works
-The **"Security Analysis"** mode deconstructs malicious emails into three core pillars:
+## 📸 How the Simulation Works
+The app uses an **"Analysis Mode"** to break down a suspicious email into three simple red flags:
 
-1.  **Domain Integrity:** Highlighting subtle typosquatting (e.g., `rnicrosoft.com` vs `microsoft.com`).
-2.  **Psychological Warfare:** Identifying "False Urgency" used to bypass critical thinking.
-3.  **Technical Masking:** Explaining how QR codes and shortlinks bypass traditional email scanners.
+1.  **The Sender:** Spotting tiny misspellings in email addresses (like `rnicrosoft` instead of `microsoft`).
+2.  **The Panic:** Identifying "False Urgency" designed to make you act before you think.
+3.  **The Hidden Link:** Explaining how QR codes and link shorteners mask the final destination.
 
 
 
 ---
 
-## 🏁 Getting Started
+## 🛠️ Built With
+* **React** - For the interactive interface.
+* **Tailwind CSS** - For a clean, modern design.
+* **Lucide React** - For the icons.
+* **Vite** - For a fast development experience.
 
-### Project Structure
-* `src/` — Core React logic and components.
-* `public/` — Static assets and QR demonstration files.
-* `tailwind.config.js` — Custom styling configurations.
+---
 
-### Local Setup
+## 🏁 Running it Locally
+If you want to see how the code works or add your own email examples:
+
 ```bash
-# Clone the repository
+# Clone the project
 git clone [https://github.com/RudraPandit0504/email-security-guide.git](https://github.com/RudraPandit0504/email-security-guide.git)
 
-# Install dependencies
+# Install the parts
 npm install
 
-# Launch development server
+# Run the app
 npm run dev

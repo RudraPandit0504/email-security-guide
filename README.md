@@ -1,75 +1,65 @@
-🛡️ Email Security Interactive Guide
+# 🛡️ Email Security Interactive Guide
 
-An interactive, educational web application designed to demonstrate how modern email attacks work and how everyday users can protect themselves.
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-Live Demo: https://email-security-guide.vercel.app/
+An interactive platform designed to dismantle the mechanics of modern email attacks. Learn to spot deception before clicking.
 
-🚀 Overview
+🔗 **[View Live Demo](https://email-security-guide.vercel.app/)**
 
-Over 90% of cyber breaches begin with a simple email. As attackers move away from easily detectable malware toward sophisticated social engineering and "Quishing" (QR Phishing), user education is the strongest line of defense.
+---
 
-This project was built to bridge the gap between technical security concepts and everyday digital habits.
+## 🚀 The Mission
+Over **90% of cyber breaches** begin with a simple email. As attackers shift toward "Quishing" (QR Phishing) and social engineering, technical filters aren't enough. This project bridges the gap between complex security concepts and everyday digital habits through hands-on simulation.
 
-Key Features:
+---
 
-Interactive Threat Analyzer: A mock inbox where users can "scan" emails to reveal hidden red flags like typosquatting and fake urgency.
+## ✨ Key Features
 
-Real-World Scenarios: Examples of Business Email Compromise (BEC), Phishing, and QR code attacks.
+| Feature | Description |
+| :--- | :--- |
+| **🔍 Threat Analyzer** | A mock inbox where you can "scan" emails to reveal hidden red flags. |
+| **🎭 Real-World Scenarios** | Simulate BEC (Business Email Compromise) and sophisticated phishing. |
+| **📱 QR-Code Test** | A functional test demonstrating how link shorteners mask dangerous destinations. |
+| **🛡️ Proactive Defenses** | Actionable advice on MFA, sender verification, and identifying psychological triggers. |
 
-The QR-Code Test: A functional QR code demonstration showing how attackers use URL shorteners to mask malicious destinations.
+---
 
-Actionable Defenses: Clear, non-technical advice on using MFA, verifying senders, and identifying "False Urgency."
+## 🛠️ Tech Stack
+* **Frontend:** React 18
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS
+* **Icons:** Lucide React
 
-🛠️ Built With
+---
 
-React - UI Framework
+## 📸 How It Works
+The **"Security Analysis"** mode deconstructs malicious emails into three core pillars:
 
-Vite - Build Tool
+1.  **Domain Integrity:** Highlighting subtle typosquatting (e.g., `rnicrosoft.com` vs `microsoft.com`).
+2.  **Psychological Warfare:** Identifying "False Urgency" used to bypass critical thinking.
+3.  **Technical Masking:** Explaining how QR codes and shortlinks bypass traditional email scanners.
 
-Tailwind CSS - Styling
 
-Lucide React - Icon Library
 
-📸 How It Works
+---
 
-The application uses a "Security Analysis" mode. When a user clicks Analyze Email, the app highlights specific parts of the message:
+## 🏁 Getting Started
 
-Domain Check: Points out subtle misspellings in sender addresses.
+### Project Structure
+* `src/` — Core React logic and components.
+* `public/` — Static assets and QR demonstration files.
+* `tailwind.config.js` — Custom styling configurations.
 
-Psychological Triggers: Identifies language used to create panic.
+### Local Setup
+```bash
+# Clone the repository
+git clone [https://github.com/RudraPandit0504/email-security-guide.git](https://github.com/RudraPandit0504/email-security-guide.git)
 
-Technical Obfuscation: Explains how link shorteners and QR codes hide true destinations.
+# Install dependencies
+npm install
 
-🏁 Getting Started
-
-If you are looking at this code for the first time, here is how the project is organized based on the file structure:
-
-src/: Contains the React source code.
-
-public/: Stores static assets for the QR demonstration.
-
-index.html: The main entry point for the browser.
-
-tailwind.config.js: Configuration for the styling engine.
-
-To run this project locally:
-
-Open your terminal in this folder.
-
-Run npm install to set up dependencies.
-
-Run npm run dev to start the local server.
-
-🛡️ Best Practices for Users
-
-If you take only three things away from this guide, let it be these:
-
-Never scan a QR code from an email unless you were specifically expecting it and have verified the source.
-
-Check the sender's address letter-by-letter. arnazon.com is not amazon.com.
-
-Bypass the link. If your "bank" sends an urgent alert, don't click the link in the email. Close the email and go to the bank's website directly through your browser.
-
-📄 License
-
-This project is for educational purposes. Feel free to use it to teach others about cybersecurity!
+# Launch development server
+npm run dev

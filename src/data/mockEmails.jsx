@@ -54,7 +54,7 @@ export const MOCK_EMAILS = [
                 <p>Please open the camera on your smartphone and scan the QR code below to log in and select your health plans for the upcoming year.</p>
                 <div className="w-32 h-32 bg-white border border-slate-300 p-2 shadow-sm inline-block">
                     <img
-                        src="/Rick%20Roll.jpeg"
+                        src="/benefits-qr.jpeg"
                         alt="Benefits Portal QR Code"
                         className="w-full h-full object-contain"
                     />

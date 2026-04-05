@@ -3,32 +3,6 @@ import React from 'react';
 export const MOCK_EMAILS = [
     {
         id: 1,
-        sender: 'IT Support Team',
-        emailAddress: 'admin@rnicrosoft-support.com',
-        subject: 'URGENT: Your account will be suspended in 2 hours',
-        date: '10:42 AM',
-        isMalicious: true,
-        content: (
-            <div className="space-y-4">
-                <p>Dear Customer,</p>
-                <p>We have detected unusual login activity on your account from an unrecognized device. To protect your data, we will be suspending your account in exactly 2 hours unless you verify your identity.</p>
-                <p>Please click the secure link below to update your security credentials immediately:</p>
-                <div className="p-3 bg-blue-50 text-blue-600 underline rounded cursor-pointer inline-block">
-                    [https://secure-login.rnicrosoft-support.com/auth/verify](https://secure-login.rnicrosoft-support.com/auth/verify)
-                </div>
-                <p>Failure to complete this verification will result in permanent data loss.</p>
-                <p>Thank you,<br />IT Security Desk</p>
-            </div>
-        ),
-        flags: [
-            { type: 'domain', text: 'rnicrosoft-support.com', reason: 'Typosquatting: Uses "rn" instead of "m" to mimic Microsoft. Legitimate emails come from known, official domains.' },
-            { type: 'urgency', text: 'suspended in 2 hours', reason: 'False Urgency: Attackers use tight deadlines to induce panic and force you to act without thinking.' },
-            { type: 'greeting', text: 'Dear Customer', reason: 'Generic Greeting: Legitimate organizations usually address you by your actual name.' },
-            { type: 'link', text: 'secure-login.rnicrosoft...', reason: 'Malicious Payload: The link directs to a fake credential-harvesting site, not the official service.' }
-        ]
-    },
-    {
-        id: 2,
         sender: 'Sarah Jenkins (CEO)',
         emailAddress: 'sarah.jenkins@company-exec.net',
         subject: 'Confidential: Wire Transfer Request',
@@ -50,7 +24,7 @@ export const MOCK_EMAILS = [
         ]
     },
     {
-        id: 3,
+        id: 2,
         sender: 'David Chen',
         emailAddress: 'david.chen@company.com',
         subject: 'Project Alpha Q3 Report',
@@ -67,7 +41,7 @@ export const MOCK_EMAILS = [
         flags: []
     },
     {
-        id: 4,
+        id: 3,
         sender: 'HR Department',
         emailAddress: 'hr-updates@workplace-benefits.io',
         subject: 'Mandatory: Annual Benefits Enrollment QR',
@@ -96,6 +70,59 @@ export const MOCK_EMAILS = [
             { type: 'quishing', text: 'Scannable QR Code', reason: 'Quishing (QR Phishing): Attackers use QR codes to bypass traditional email link scanners and move the attack to your less-protected mobile device.' },
             { type: 'obfuscation', text: 'Hidden shortlink', reason: 'Link Obfuscation: The QR code hides the true destination using a URL shortener (like TinyURL or Bit.ly) so your phone scanner doesn\'t immediately show you the suspicious website.' },
             { type: 'consequence', text: 'benefits will expire', reason: 'Threat of Negative Consequence: Forcing action through fear of losing healthcare or financial benefits.' }
+        ]
+    },
+    {
+        id: 4,
+        sender: 'Accounts Payable',
+        emailAddress: 'billing-notices@secure-vendordocs.com',
+        subject: 'Invoice 8841 Overdue - Remittance Copy Attached',
+        date: '08:27 AM',
+        isMalicious: true,
+        content: (
+            <div className="space-y-4">
+                <p>Hello,</p>
+                <p>Our records show invoice 8841 is now 14 days overdue. To avoid service disruption, please review the attached remittance copy and confirm payment today.</p>
+                <div className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 font-mono text-sm text-slate-700">
+                    <span>[Attachment]</span>
+                    <span>Invoice_8841_Payment_Copy.zip</span>
+                </div>
+                <p>The compressed file contains the updated invoice and payment instructions. Open the document and enable editing if prompted so the totals display correctly.</p>
+                <p>If we do not receive confirmation by end of day, your account may be placed on hold.</p>
+                <p>Regards,<br />Vendor Collections Team</p>
+            </div>
+        ),
+        flags: [
+            { type: 'attachment', text: 'Invoice_8841_Payment_Copy.zip', reason: 'Suspicious Attachment: Attackers often hide malware inside ZIP archives to get around basic email filtering and make dangerous files look routine.' },
+            { type: 'execution', text: 'enable editing if prompted', reason: 'Malware Delivery Tactic: Instructions to enable editing, content, or macros are a classic sign of document-based malware and ransomware campaigns.' },
+            { type: 'pressure', text: 'service disruption... account may be placed on hold', reason: 'Payment Pressure: Financial urgency is used to push victims into opening attachments before verifying whether the invoice is real.' },
+            { type: 'context', text: 'generic vendor notice', reason: 'Lack of Business Context: The message gives no specific project, contact, or purchase history that a legitimate invoice reminder would normally include.' }
+        ]
+    },
+    {
+        id: 5,
+        sender: 'Microsoft 365 Security',
+        emailAddress: 'security-alerts@micr0soft-verify.com',
+        subject: 'Unusual sign-in blocked - re-authentication required',
+        date: '07:51 AM',
+        isMalicious: true,
+        content: (
+            <div className="space-y-4">
+                <p>Hello,</p>
+                <p>We detected an unusual sign-in attempt on your Microsoft 365 account from a new location. The attempt was blocked, but your active session must now be re-authenticated to keep mailbox access enabled.</p>
+                <p>Please complete the secure sign-in review below using your current password and Microsoft Authenticator approval:</p>
+                <div className="p-3 bg-blue-50 text-blue-600 underline rounded cursor-pointer inline-block">
+                    [https://login.micr0soft-verify.com/session-review](https://login.micr0soft-verify.com/session-review)
+                </div>
+                <p>For security reasons, the review window expires in 10 minutes. If you delay, all active sessions will be revoked and you may lose access to recent mail activity.</p>
+                <p>Microsoft 365 Identity Protection</p>
+            </div>
+        ),
+        flags: [
+            { type: 'domain', text: 'micr0soft-verify.com', reason: 'Lookalike Domain: The sender and link use a zero in place of the second "o" in Microsoft, a common trick used in credential theft campaigns.' },
+            { type: 'aitm', text: 'use your current password and Microsoft Authenticator approval', reason: 'AiTM Setup: Adversary-in-the-Middle phishing pages proxy the real login flow so they can steal both credentials and authenticated session cookies in real time.' },
+            { type: 'session', text: 're-authenticated to keep mailbox access enabled', reason: 'Session-Themed Lure: Messages about preserving a live session are often crafted to make the fake login page feel more believable and time-sensitive.' },
+            { type: 'urgency', text: 'review window expires in 10 minutes', reason: 'Forced Urgency: Tight countdowns are meant to stop you from independently opening Microsoft 365 and checking whether the alert is legitimate.' }
         ]
     }
 ];

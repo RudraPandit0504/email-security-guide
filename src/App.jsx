@@ -26,10 +26,10 @@ export default function App() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <ShieldAlert className="w-10 h-10 text-red-400" />
-            <span className="text-red-400 font-semibold tracking-wider uppercase text-sm">Cybersecurity Interactive Guide</span>
+            <span className="text-red-400 font-semibold tracking-wider uppercase text-sm">Email Security Awareness</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Anatomy of an <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">Email Attack</span>
+            How <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">Email Attacks</span> Pull People In
           </h1>
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 leading-relaxed">
             Over 90% of cyber breaches begin with an email. Attackers use deceptive tactics, fake urgency, and psychological manipulation to trick you. Learn how to spot the red flags and avoid getting scammed.

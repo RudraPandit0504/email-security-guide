@@ -54,13 +54,9 @@ export const MOCK_EMAILS = [
                 <p>Please open the camera on your smartphone and scan the QR code below to log in and select your health plans for the upcoming year.</p>
                 <div className="w-32 h-32 bg-white border border-slate-300 p-2 shadow-sm inline-block">
                     <img
-                        src="/Rick Roll.jpeg"
+                        src="/Rick%20Roll.jpeg"
                         alt="Benefits Portal QR Code"
                         className="w-full h-full object-contain"
-                        onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = "[https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg](https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg)";
-                        }}
                     />
                 </div>
                 <p>If you do not complete this by Friday, your current benefits will expire.</p>

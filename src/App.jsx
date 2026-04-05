@@ -15,10 +15,7 @@ export default function App() {
     const savedTheme = window.localStorage.getItem('email-security-theme');
     if (savedTheme) {
       setIsDarkMode(savedTheme === 'dark');
-      return;
     }
-
-    setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
   }, []);
 
   useEffect(() => {
@@ -256,12 +253,12 @@ export default function App() {
         <section>
           <div className="mb-10 text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">How to Verify an Email</h2>
-            <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`text-xl md:text-2xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
               Before clicking anything, slow down and check the small details. Most suspicious emails reveal themselves when you know where to look.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6">
             {[
               {
                 title: 'Sender',
@@ -283,10 +280,13 @@ export default function App() {
                 title: 'Tone & Context',
                 desc: 'Ask whether the request fits your real work, recent activity, or normal company process.'
               }
-            ].map((item) => (
-              <div key={item.title} className={`border rounded-2xl p-6 md:p-7 shadow-sm min-h-[200px] ${isDarkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'}`}>
-                <div className={`text-base font-semibold uppercase tracking-wide mb-3 ${isDarkMode ? 'text-sky-300' : 'text-sky-700'}`}>{item.title}</div>
-                <p className={`text-base leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>{item.desc}</p>
+            ].map((item, idx) => (
+              <div
+                key={item.title}
+                className={`border rounded-2xl p-7 md:p-8 shadow-sm min-h-[220px] md:col-span-1 xl:col-span-2 ${idx === 3 ? 'xl:col-start-2' : ''} ${isDarkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'}`}
+              >
+                <div className={`text-lg md:text-xl font-semibold uppercase tracking-wide mb-4 ${isDarkMode ? 'text-sky-300' : 'text-sky-700'}`}>{item.title}</div>
+                <p className={`text-lg md:text-xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -295,21 +295,21 @@ export default function App() {
         <section>
           <div className="mb-10 text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">What Happens After One Click</h2>
-            <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`text-xl md:text-2xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
               A single click can lead to far more than one mistake. Attackers use that moment to move quickly from inbox access to real damage.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               'You land on a fake login page and hand over your username and password.',
               'The attacker captures your session and may bypass MFA using stolen cookies.',
               'A malicious file runs in the background and installs malware or ransomware.',
               'The compromised account is then used to target coworkers, customers, or financial systems.'
             ].map((step, idx) => (
-              <div key={idx} className={`rounded-2xl p-7 md:p-8 shadow-lg min-h-[220px] ${isDarkMode ? 'bg-slate-900 border border-slate-800 text-white' : 'bg-white border border-slate-200 text-slate-800'}`}>
-                <div className={`text-base font-bold mb-4 ${isDarkMode ? 'text-sky-400' : 'text-sky-700'}`}>Step {idx + 1}</div>
-                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{step}</p>
+              <div key={idx} className={`rounded-2xl p-8 md:p-10 shadow-lg min-h-[250px] ${isDarkMode ? 'bg-slate-900 border border-slate-800 text-white' : 'bg-white border border-slate-200 text-slate-800'}`}>
+                <div className={`text-lg md:text-xl font-bold mb-5 ${isDarkMode ? 'text-sky-400' : 'text-sky-700'}`}>Step {idx + 1}</div>
+                <p className={`text-xl leading-relaxed ${isDarkMode ? 'text-slate-200' : 'text-slate-600'}`}>{step}</p>
               </div>
             ))}
           </div>
@@ -318,12 +318,12 @@ export default function App() {
         <section>
           <div className="mb-10 text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Real-World Consequences</h2>
-            <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+            <p className={`text-xl md:text-2xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
               Email attacks are not just technical problems. They can disrupt daily work, cost money, and damage trust across an entire organization.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 title: 'Credential Theft',
@@ -342,9 +342,9 @@ export default function App() {
                 desc: 'Sensitive employee, customer, or company information can be leaked or sold.'
               }
             ].map((item) => (
-              <div key={item.title} className={`border rounded-2xl p-7 shadow-sm min-h-[210px] ${isDarkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'}`}>
-                <h3 className={`text-xl font-bold mb-3 ${isDarkMode ? 'text-slate-100' : 'text-slate-800'}`}>{item.title}</h3>
-                <p className={`text-base leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>{item.desc}</p>
+              <div key={item.title} className={`border rounded-2xl p-8 md:p-9 shadow-sm min-h-[240px] ${isDarkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'}`}>
+                <h3 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-slate-100' : 'text-slate-800'}`}>{item.title}</h3>
+                <p className={`text-lg md:text-xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>{item.desc}</p>
               </div>
             ))}
           </div>

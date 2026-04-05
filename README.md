@@ -1,54 +1,67 @@
-# 🛡️ Email Attack Simulator (Educational)
+# Email Attack Awareness Guide
 
 [![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-A simple, interactive web app built to demonstrate how common email scams work. This is a **learning project** designed to help "normal people" recognize red flags and avoid getting scammed.
+An interactive educational website that explains how email-based cyber attacks work, how to spot red flags, and what practical steps people can take to stay safer online.
 
-🔗 **[View the Project](https://email-security-guide.vercel.app/)**
+This project is designed for awareness and presentation use. It is not a real email scanning or security tool.
 
----
+## What the Website Includes
 
-## 📖 What is this?
-This isn't a professional security tool. It’s a **demonstration sandbox** created to show the "tricks" attackers use in your inbox. Since 90% of hacks start with an email, the goal here is to bridge the gap between technical jargon and real-life habits.
+- A hero section and stats banner that introduce why email attacks matter
+- An interactive inbox demo with realistic mock email examples
+- Attack examples covering BEC, quishing, malware/ransomware, and AiTM
+- A "Reveal Red Flags" view that explains suspicious details inside each email
+- Supporting sections such as:
+  - How to Verify an Email
+  - What Happens After One Click
+  - Real-World Consequences
+  - How to Protect Yourself
+  - What to Do If You Already Interacted
 
-### What you can do here:
-* **🔍 Analyze Scams:** Use the "Analyze" button in the mock inbox to see exactly where a scammer is trying to trick you.
-* **🎭 Spot the Fakes:** Look at examples of fake CEO emails, "urgent" IT alerts, and HR updates.
-* **📱 The QR Test:** Scan a functional QR code to see how attackers hide where a link is actually taking you (it's a safe surprise!).
-* **✅ Learn Defenses:** Simple, non-technical steps anyone can take to keep their accounts safe.
+## Theme Support
 
----
+- The website includes both light mode and dark mode
+- The default theme on first launch is light mode
+- If a user changes the theme, that preference is saved in local storage
 
-## 📸 How the Simulation Works
-The app uses an **"Analysis Mode"** to break down a suspicious email into three simple red flags:
+## Built With
 
-1.  **The Sender:** Spotting tiny misspellings in email addresses (like `rnicrosoft` instead of `microsoft`).
-2.  **The Panic:** Identifying "False Urgency" designed to make you act before you think.
-3.  **The Hidden Link:** Explaining how QR codes and link shorteners mask the final destination.
+- React
+- Tailwind CSS
+- Lucide React
+- Vite
 
+## Project Purpose
 
+The goal of this project is to make email security easier to understand for non-technical users. Instead of using dense cybersecurity jargon, the website focuses on:
 
----
+- common attacker tactics
+- realistic inbox examples
+- simple habits people can actually follow
+- presentation-friendly explanations for awareness sessions or class demos
 
-## 🛠️ Built With
-* **React** - For the interactive interface.
-* **Tailwind CSS** - For a clean, modern design.
-* **Lucide React** - For the icons.
-* **Vite** - For a fast development experience.
-
----
-
-## 🏁 Running it Locally
-If you want to see how the code works or add your own email examples:
+## Running Locally
 
 ```bash
-# Clone the project
-git clone [https://github.com/RudraPandit0504/email-security-guide.git](https://github.com/RudraPandit0504/email-security-guide.git)
-
-# Install the parts
 npm install
-
-# Run the app
 npm run dev
+```
+
+Then open the local Vite URL shown in the terminal.
+
+## Presentation Use
+
+This project works well for a group presentation because it naturally breaks into sections:
+
+- One person can introduce email attacks and explain the statistics
+- One person can walk through the interactive inbox examples
+- One person can cover consequences, protection habits, and response steps
+
+## Notes
+
+- Mock email content is stored in `src/data/mockEmails.jsx`
+- The main page layout is in `src/App.jsx`
+- Reusable UI pieces such as cards and defense items are inside `src/components`

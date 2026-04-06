@@ -94,31 +94,5 @@ export const MOCK_EMAILS = [
             { type: 'pressure', text: 'service disruption... account may be placed on hold', reason: 'Payment Pressure: Financial urgency is used to push victims into opening attachments before verifying whether the invoice is real.' },
             { type: 'context', text: 'generic vendor notice', reason: 'Lack of Business Context: The message gives no specific project, contact, or purchase history that a legitimate invoice reminder would normally include.' }
         ]
-    },
-    {
-        id: 5,
-        sender: 'Microsoft 365 Security',
-        emailAddress: 'security-alerts@micr0soft-verify.com',
-        subject: 'Unusual sign-in blocked - re-authentication required',
-        date: '07:51 AM',
-        isMalicious: true,
-        content: (
-            <div className="space-y-4">
-                <p>Hello,</p>
-                <p>We detected an unusual sign-in attempt on your Microsoft 365 account from a new location. The attempt was blocked, but your active session must now be re-authenticated to keep mailbox access enabled.</p>
-                <p>Please complete the secure sign-in review below using your current password and Microsoft Authenticator approval:</p>
-                <div className="p-3 bg-blue-50 text-blue-600 underline rounded cursor-pointer inline-block">
-                    [https://login.micr0soft-verify.com/session-review](https://login.micr0soft-verify.com/session-review)
-                </div>
-                <p>For security reasons, the review window expires in 10 minutes. If you delay, all active sessions will be revoked and you may lose access to recent mail activity.</p>
-                <p>Microsoft 365 Identity Protection</p>
-            </div>
-        ),
-        flags: [
-            { type: 'domain', text: 'micr0soft-verify.com', reason: 'Lookalike Domain: The sender and link use a zero in place of the second "o" in Microsoft, a common trick used in credential theft campaigns.' },
-            { type: 'aitm', text: 'use your current password and Microsoft Authenticator approval', reason: 'AiTM Setup: Adversary-in-the-Middle phishing pages proxy the real login flow so they can steal both credentials and authenticated session cookies in real time.' },
-            { type: 'session', text: 're-authenticated to keep mailbox access enabled', reason: 'Session-Themed Lure: Messages about preserving a live session are often crafted to make the fake login page feel more believable and time-sensitive.' },
-            { type: 'urgency', text: 'review window expires in 10 minutes', reason: 'Forced Urgency: Tight countdowns are meant to stop you from independently opening Microsoft 365 and checking whether the alert is legitimate.' }
-        ]
     }
 ];

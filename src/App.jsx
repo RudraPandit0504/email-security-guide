@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ShieldAlert, Mail, Search, AlertTriangle, CheckCircle, ShieldCheck, FileText, Smartphone, UserX, Link as LinkIcon, Server, Eye, Moon, Sun } from 'lucide-react';
+import { ShieldAlert, Mail, Search, AlertTriangle, CheckCircle, ShieldCheck, FileText, Smartphone, UserX, Link as LinkIcon, Eye, Moon, Sun } from 'lucide-react';
 import { MOCK_EMAILS } from './data/mockEmails';
 import AttackCard from './components/AttackCard';
 import DefenseItem from './components/DefenseItem';
@@ -58,32 +58,14 @@ export default function App() {
         </div>
       </header>
 
-      {/* STATS BANNER */}
-      <div className={`text-white py-8 px-6 transition-colors duration-300 ${isDarkMode ? 'bg-slate-900' : 'bg-sky-700'}`}>
-        <div className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x ${isDarkMode ? 'divide-slate-700' : 'divide-sky-500/50'}`}>
-          <div className="px-4 text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">3.4 Billion+</div>
-            <div className={`text-base md:text-lg ${isDarkMode ? 'text-slate-300' : 'text-sky-100'}`}>Malicious emails sent every single day</div>
-          </div>
-          <div className="px-4 text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">90%</div>
-            <div className={`text-base md:text-lg ${isDarkMode ? 'text-slate-300' : 'text-sky-100'}`}>Of successful cyber attacks start with a phishing email</div>
-          </div>
-          <div className="px-4 text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">400%</div>
-            <div className={`text-base md:text-lg ${isDarkMode ? 'text-slate-300' : 'text-sky-100'}`}>Increase in "Quishing" (QR code attacks) since 2023</div>
-          </div>
-        </div>
-      </div>
-
       <main className="max-w-6xl mx-auto px-6 py-16 space-y-24">
 
         {/* INTERACTIVE DEMO SECTION */}
         <section id="interactive-demo" className="scroll-mt-24">
           <div className="mb-10 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Interactive Threat Analyzer</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Spot the Red Flags</h2>
             <p className={`text-lg md:text-xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-              Step into the shoes of a security analyst. Browse the mock inbox below. Select an email, read it carefully, and click "Reveal Red Flags" to uncover hidden social engineering and technical warning signs.
+              Look through the sample inbox below and open any email that catches your attention. When you're ready, click "Reveal Red Flags" to see the warning signs and understand what makes it suspicious.
             </p>
           </div>
 
@@ -204,49 +186,53 @@ export default function App() {
         {/* TYPES OF ATTACKS GRID */}
         <section>
           <div className="mb-10 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Common Attack Vectors</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Common Email Scams</h2>
             <p className={`text-lg md:text-xl leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
               Threat actors continuously evolve their tactics. Understanding the specific mechanics of these attacks is the first step in defending against them.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AttackCard
-              icon={<Mail className="w-7 h-7 text-sky-500" />}
-              title="Phishing & Spear Phishing"
-              description="Emails that use social engineering to trick you into revealing passwords or clicking bad links. They often look exactly like official emails from banks or popular services."
-              isDarkMode={isDarkMode}
-            />
-            <AttackCard
-              icon={<UserX className="w-7 h-7 text-cyan-500" />}
-              title="Business Email Compromise (BEC)"
-              description="Attackers impersonate executives or trusted vendors to trick finance teams into wiring money or changing payroll details. No malicious links are used; it relies entirely on authority and deception."
-              isDarkMode={isDarkMode}
-            />
-            <AttackCard
-              icon={<FileText className="w-7 h-7 text-sky-500" />}
-              title="Malware & Ransomware"
-              description="Emails carrying disguised executable files, malicious scripts (.vbs, .js), or macro-laden documents. Once opened, they encrypt the network and demand payment."
-              isDarkMode={isDarkMode}
-            />
-            <AttackCard
-              icon={<LinkIcon className="w-7 h-7 text-cyan-500" />}
-              title="Typosquatting & Spoofing"
-              description="Registering domains that look visually identical to legitimate ones (e.g., rnicrosoft.com instead of microsoft.com) to bypass casual human inspection."
-              isDarkMode={isDarkMode}
-            />
-            <AttackCard
-              icon={<Smartphone className="w-7 h-7 text-sky-500" />}
-              title="Quishing (QR Phishing)"
-              description="Embedding malicious QR codes in emails. Security scanners can't easily read them, and they force users to switch to personal, less-secure mobile devices to complete the attack."
-              isDarkMode={isDarkMode}
-            />
-            <AttackCard
-              icon={<Server className="w-7 h-7 text-cyan-500" />}
-              title="AiTM (Adversary-in-the-Middle)"
-              description="Advanced phishing that intercepts the login process in real-time, allowing attackers to bypass traditional Multi-Factor Authentication (MFA) by stealing session cookies."
-              isDarkMode={isDarkMode}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6">
+            <div className="xl:col-span-2">
+              <AttackCard
+                icon={<Mail className="w-7 h-7 text-sky-500" />}
+                title="Phishing & Spear Phishing"
+                description="These emails try to trick you into clicking a link, sharing a password, or giving away personal information. Some are generic, while others are written to target one specific person."
+                isDarkMode={isDarkMode}
+              />
+            </div>
+            <div className="xl:col-span-2">
+              <AttackCard
+                icon={<LinkIcon className="w-7 h-7 text-cyan-500" />}
+                title="Typosquatting"
+                description="This is when a sender uses a web address that looks almost real at first glance. One small spelling change can make a fake email look trustworthy."
+                isDarkMode={isDarkMode}
+              />
+            </div>
+            <div className="xl:col-span-2">
+              <AttackCard
+                icon={<UserX className="w-7 h-7 text-cyan-500" />}
+                title="Business Email Compromise (BEC)"
+                description="In this type of scam, someone pretends to be a boss, coworker, or vendor and asks for money or sensitive information. The message often feels urgent so the victim acts without double-checking."
+                isDarkMode={isDarkMode}
+              />
+            </div>
+            <div className="xl:col-span-2 xl:col-start-2">
+              <AttackCard
+                icon={<FileText className="w-7 h-7 text-sky-500" />}
+                title="Malware & Ransomware"
+                description="These emails carry harmful attachments or files. If someone opens them, they can install malware, lock files, or spread damage through the system."
+                isDarkMode={isDarkMode}
+              />
+            </div>
+            <div className="md:col-span-2 xl:col-span-2 xl:col-start-4">
+              <AttackCard
+                icon={<Smartphone className="w-7 h-7 text-sky-500" />}
+                title="Quishing (QR Phishing)"
+                description="Instead of a normal link, the email includes a QR code. Scanning it can send you to a fake website or login page without making the danger obvious right away."
+                isDarkMode={isDarkMode}
+              />
+            </div>
           </div>
         </section>
 
